@@ -1,0 +1,49 @@
+{
+  "name": "dsh-input-insight",
+  "version": "0.2.0",
+  "private": true,
+  "icon": "icon.svg",
+  "description": "Input insight for DeepSeek Harness: how many characters you actually typed per day / per session / per hour, with a GitHub-style activity heatmap in the right sidebar. Reads session logs directly, no dependency on other plugins.",
+  "keywords": [
+    "deepseek-harness",
+    "dsh",
+    "dsh-plugin",
+    "insight",
+    "heatmap",
+    "usage"
+  ],
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": {
+      "default": "./lib/index.js"
+    },
+    "./client": {
+      "default": "./lib/client.js"
+    },
+    "./package.json": "./package.json",
+    "./locale/*.json": "./locale/*.json"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-client-locale",
+        "@deepseek-ai/dsh-client-ui-sidebar-right"
+      ]
+    }
+  },
+  "files": [
+    "lib",
+    "locale",
+    "cordis.patch.yml",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=22.19.0"
+  },
+  "license": "MIT"
+}

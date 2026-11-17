@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Input insight (dsh-input-insight)",
+    "description": "How many characters you actually typed per day: a right-sidebar heatmap plus today, streak, hour profile and session ranking. Reads session logs directly, no other plugin needed."
+  }
+}

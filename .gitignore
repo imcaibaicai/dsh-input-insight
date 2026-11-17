@@ -1,0 +1,16 @@
+# runtime artifacts
+.cache/
+node_modules/
+*.log
+
+# local scratch
+tmp/
+.tmp/
+*.tmp
+
+# editors / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
