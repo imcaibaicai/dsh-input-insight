@@ -3,7 +3,7 @@
 零依赖（只用 `node:fs` / `node:path` / `node:zlib`）、纯函数式的 DSH 会话日志扫描与日账折叠模块。
 
 - 源码：`lib/scan.js`（ESM）、`lib/scan-cli.mjs`
-- 运行时产物：`.cache/scan-cache.json`、`.cache/report.json`，已由 `.gitignore` 排除。删掉即回到冷启动全量扫描。
+- 运行时产物：`.cache/scan-cache.json`、`.cache/report.json`；删掉即回到冷启动全量扫描。
 
 ---
 
@@ -185,7 +185,7 @@ const { agg, elapsedMs, files, filesScanned, skippedFiles, incrementalFiles, ful
 4. **`data.id` 缺失的消息不参与去重**：极少数边缘事件可能因此重复计。
 5. **`chars` 是键入量不是写作量**：语音输入的中转文本计入（那是自己说的话）。整段粘贴的控制台/构建日志不计入，改记 `pasteChars`；**长段散文式粘贴（引用的文章、论文摘要）依旧计入**，判据只识别机器输出形态。文件附件与截图贡献 0 字。
 6. **单进程串行解压**：见第三节。
-7. **`.cache/` 是运行时产物**：已由 `.gitignore` 排除，删掉即回到全量首扫，无害。
+7. **`.cache/` 是运行时产物**：删掉即回到全量首扫，无害。
 
 ---
 
